@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const MovieForm = ({ match }) => {
+const MovieForm = ({ match, history }) => {
     return (
     <div>
         <h1> Movie Form {match.params.id} </h1> );
@@ -12,4 +12,4 @@ const MovieForm = ({ match }) => {
     );
 }
  
-export default MovieForm
+export default MovieForm;
