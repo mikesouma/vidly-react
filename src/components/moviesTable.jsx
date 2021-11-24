@@ -3,7 +3,6 @@ import Table from './common/table';
 import Like from './common/like';
 
 class MoviesTable extends React.Component {
-  
     columns = [
         {path: 'title' , label: 'Title'},
         {path: 'genre.name' , label: 'Genre'},

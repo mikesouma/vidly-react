@@ -1,15 +1,17 @@
 import React from 'react';
-//import logo from './logo.svg';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Movies from './components/movies';
 import Customers from './components/customers';
 import Rentals from './components/rentals';
 import NotFound from './components/notFound';
+import NavBar from './components/navbar';
 import './App.css';
 
 class App extends React.Component {
   render() { 
     return(
+      <React.Fragment>
+      <NavBar />
       <main className="container">
         <Switch>
           <Route path="/movies" component={Movies} />
@@ -20,6 +22,7 @@ class App extends React.Component {
           <Redirect to="/not-found" />
         </Switch>
       </main>
+      </React.Fragment>
     );
   }
 }
