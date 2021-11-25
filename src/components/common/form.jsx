@@ -61,7 +61,8 @@ class Form extends React.Component {
         const {data, errors } = this.state;
 
        return ( 
-        <Input 
+        <Input
+            type={type} 
             name={name}
             value={data[name]}
             label={label}
