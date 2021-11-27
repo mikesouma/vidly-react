@@ -56,6 +56,21 @@ class Form extends React.Component {
         </button>
         );
     }
+
+    renderSelect(name, label, options) {
+        const { data,errors } = this.state;
+
+        return (
+            <select 
+                name={name} 
+                value={data[name]}
+                label={label}
+                options={options}
+                onChange={this.handleChange}
+                error={errors[name]}
+            />
+        );
+    }
     
     renderInput(name, label, type = 'text'){
         const {data, errors } = this.state;
