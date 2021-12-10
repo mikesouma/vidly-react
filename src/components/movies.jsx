@@ -28,7 +28,7 @@ class Movies extends React.Component {
         const { data }= await getGenres();
         const genres = [{ _id: "", name: 'All Genres' }, ...data];
         
-        const { data : movies } = await getMovies()
+        const { data: movies } = await getMovies();
         this.setState({ movies, genres });
     }
 
@@ -124,7 +124,7 @@ class Movies extends React.Component {
                        New Movie
                    </Link>
                <p>Showing {totalCount} movies in the database.</p>
-                <SearchBox value={searchQuery} onchange={this.handleSearch} />
+                <SearchBox value={searchQuery} onChange={this.handleSearch} />
                 <MoviesTable 
                     movies={movies}
                     sortColumn={sortColumn}
