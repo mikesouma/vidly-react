@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link, NavLink } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({ user }) => {
     return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -28,11 +28,27 @@ const NavBar = () => {
                         Rentals
                     </NavLink>
                 </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" to="/login">
+                
+                {!user && (
+                <React.Fragment>
+                    <NavLink className="nav-item nav-link" to="/login">
                         Login
                     </NavLink>
-                </li>
+                    <NavLink className="nav-item nav-link" to="/register">
+                        Register
+                    </NavLink>
+                </React.Fragment>
+                )}
+                 {user && (
+                <React.Fragment>
+                    <NavLink className="nav-item nav-link" to="/profile">
+                        {user.name}
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" to="/logout">
+                        Logout
+                    </NavLink>
+                </React.Fragment>
+                )}
             </ul>
             </div>
         </div>
